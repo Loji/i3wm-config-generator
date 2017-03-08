@@ -1,5 +1,7 @@
 module Msg exposing (..)
 
+import TileContainer.Msg as TileContainer
+
 
 type Msg
-    = NoOp
+    = MsgForTileContainer TileContainer.Msg
