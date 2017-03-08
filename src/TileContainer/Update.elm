@@ -16,4 +16,10 @@ updateTileContainer : TileContainer.Msg -> TileContainer.Model -> TileContainer.
 updateTileContainer msg model =
     case msg of
         TileContainer.ChangeLayout ->
-            { model | layout = TileContainer.Horizontal }
+            { model
+                | layout =
+                    if model.layout == TileContainer.Horizontal then
+                        TileContainer.Vertical
+                    else
+                        TileContainer.Horizontal
+            }
