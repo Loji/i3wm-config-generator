@@ -8,7 +8,7 @@ import Msg as Main
 update : Main.Msg -> TileContainer.Model -> TileContainer.Model
 update msg model =
     case msg of
-        Main.MsgForTileContainer msg ->
+        Main.MsgForTileContainer msg id ->
             updateTileContainer msg model
 
 
@@ -23,3 +23,6 @@ updateTileContainer msg model =
                     else
                         TileContainer.Horizontal
             }
+
+        TileContainer.AddTile ->
+            { model | tiles = TileContainer.appendTile model.tiles TileContainer.model }

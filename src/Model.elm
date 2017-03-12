@@ -4,11 +4,11 @@ import TileContainer.Model as TileContainer
 
 
 type alias Model =
-    { tiles : TileContainer.Model
+    { tiles : List TileContainer.Model
     }
 
 
 initialModel : Model
 initialModel =
-    { tiles = TileContainer.model
+    { tiles = [ TileContainer.model ]
     }

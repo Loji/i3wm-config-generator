@@ -1,6 +1,8 @@
 module View exposing (..)
 
 import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.Events exposing (..)
 import Model exposing (..)
 import Msg exposing (..)
 import TileContainer.View as TileContainer
@@ -12,7 +14,5 @@ view model =
         tiles =
             model.tiles
     in
-        div []
-            [ text "it's working"
-            , TileContainer.view tiles
-            ]
+        div [ class "mainTileContainer" ]
+            (List.map TileContainer.view tiles)
