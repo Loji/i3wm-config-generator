@@ -1,6 +1,8 @@
 module TileContainer.Msg exposing (..)
 
+import TileContainer.Model exposing (Model)
+
 
 type Msg
     = ChangeLayout
-    | AddTile
+    | AddChildren Model

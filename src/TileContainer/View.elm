@@ -30,17 +30,18 @@ view model =
             (List.append
                 [ div [ class "tileActionButtons" ]
                     [ i
-                        [ onClick (Msg.MsgForTileContainer TileContainer.ChangeLayout model.id)
+                        [ onClick (Msg.ModifyTileContainer TileContainer.ChangeLayout model.id)
                         , class ("fa " ++ toggleLayoutIcon)
                         ]
                         []
                     , i
-                        [ onClick (Msg.MsgForTileContainer TileContainer.AddTile model.id)
+                        [ onClick (Msg.AddTileContainer model.id)
                         , class ("fa fa-plus")
                         ]
                         []
                     ]
-                , text "Here lies list"
                 ]
-                (List.map view (TileContainer.getChildList model.tiles))
+                (List.append [ text (toString model.id) ]
+                    (List.map view (TileContainer.getChildList model.tiles))
+                )
             )

@@ -4,4 +4,5 @@ import TileContainer.Msg as TileContainer
 
 
 type Msg
-    = MsgForTileContainer TileContainer.Msg Int
+    = ModifyTileContainer TileContainer.Msg Int
+    | AddTileContainer Int
