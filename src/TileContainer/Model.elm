@@ -21,31 +21,34 @@ type ChildTiles
     = ChildTiles (List Model)
 
 
+addChildTile : Model -> Model
+addChildTile modifiedModel =
+    { modifiedModel
+        | tiles = appendTile modifiedModel.tiles model
+    }
+
+
 appendTile : ChildTiles -> Model -> ChildTiles
 appendTile (ChildTiles list) element =
     ChildTiles (element :: list)
 
 
-getChildList : ChildTiles -> List Model
-getChildList (ChildTiles list) =
+getChildTiles : ChildTiles -> List Model
+getChildTiles (ChildTiles list) =
     list
 
 
 modifyById : ModelOperation -> Int -> ChildTiles -> ChildTiles
-modifyById fun id childList =
+modifyById fun id modifiedModel =
     ChildTiles
         (List.map
             (\el ->
                 if el.id == id then
                     fun el
-                else if List.length el.tiles == 0 then
-                    el
                 else
-                    { el
-                        | tiles = modifyById fun id el.tiles
-                    }
+                    { el | tiles = modifyById fun id el.tiles }
             )
-            (getChildList childList)
+            (getChildTiles modifiedModel)
         )
 
 

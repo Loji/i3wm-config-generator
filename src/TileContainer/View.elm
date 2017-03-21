@@ -42,6 +42,6 @@ view model =
                     ]
                 ]
                 (List.append [ text (toString model.id) ]
-                    (List.map view (TileContainer.getChildList model.tiles))
+                    (List.map view (TileContainer.getChildTiles model.tiles))
                 )
             )

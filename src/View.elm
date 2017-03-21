@@ -6,6 +6,7 @@ import Html.Events exposing (..)
 import Model exposing (..)
 import Msg exposing (..)
 import TileContainer.View as TileContainer
+import TileContainer.Model exposing (getChildTiles)
 
 
 view : Model -> Html Msg
@@ -15,4 +16,4 @@ view model =
             model.tiles
     in
         div [ class "mainTileContainer" ]
-            (List.map TileContainer.view tiles)
+            (List.map TileContainer.view (getChildTiles tiles))
