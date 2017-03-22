@@ -1,4 +1,4 @@
-module TileContainer.Model exposing (..)
+module Tile.Model exposing (..)
 
 
 type Layout
@@ -19,6 +19,13 @@ type alias ModelOperation =
 
 type ChildTiles
     = ChildTiles (List Model)
+
+
+newTile : Int -> Model
+newTile id =
+    { model
+        | id = id
+    }
 
 
 addChildTile : Model -> Model

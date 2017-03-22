@@ -1,8 +1,8 @@
 module Msg exposing (..)
 
-import TileContainer.Msg as TileContainer
+import Tile.Msg as Tile
 
 
 type Msg
-    = ModifyTileContainer TileContainer.Msg Int
-    | AddTileContainer Int
+    = ModifyTile Tile.Msg Int
+    | AddTile Int

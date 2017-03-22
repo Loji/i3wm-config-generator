@@ -5,8 +5,8 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Model exposing (..)
 import Msg exposing (..)
-import TileContainer.View as TileContainer
-import TileContainer.Model exposing (getChildTiles)
+import Tile.View as Tile
+import Tile.Model exposing (getChildTiles)
 
 
 view : Model -> Html Msg
@@ -15,5 +15,5 @@ view model =
         tiles =
             model.tiles
     in
-        div [ class "mainTileContainer" ]
-            (List.map TileContainer.view (getChildTiles tiles))
+        div [ class "mainTile" ]
+            (List.map Tile.view (getChildTiles tiles))

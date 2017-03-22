@@ -1,47 +1,47 @@
-module TileContainer.View exposing (..)
+module Tile.View exposing (..)
 
 import Html exposing (..)
 import Html.Events exposing (onClick)
 import Html.Attributes exposing (..)
 import Msg exposing (Msg)
-import TileContainer.Msg as TileContainer
-import TileContainer.Model as TileContainer
+import Tile.Msg as Tile
+import Tile.Model as Tile
 
 
-view : TileContainer.Model -> Html Msg
+view : Tile.Model -> Html Msg
 view model =
     let
-        tileContainerLayout =
-            if model.layout == TileContainer.Horizontal then
+        tileLayout =
+            if model.layout == Tile.Horizontal then
                 "tileContainter--horizontal"
             else
                 "tileContainter--vertical"
 
         toggleLayoutIcon =
-            if model.layout == TileContainer.Horizontal then
+            if model.layout == Tile.Horizontal then
                 "fa-arrows-v"
             else
                 "fa-arrows-h"
     in
         div
             [ class
-                ("tileContainter " ++ tileContainerLayout)
+                ("tileContainter " ++ tileLayout)
             ]
             (List.append
                 [ div [ class "tileActionButtons" ]
                     [ i
-                        [ onClick (Msg.ModifyTileContainer TileContainer.ChangeLayout model.id)
+                        [ onClick (Msg.ModifyTile Tile.ChangeLayout model.id)
                         , class ("fa " ++ toggleLayoutIcon)
                         ]
                         []
                     , i
-                        [ onClick (Msg.AddTileContainer model.id)
+                        [ onClick (Msg.AddTile model.id)
                         , class ("fa fa-plus")
                         ]
                         []
                     ]
                 ]
                 (List.append [ text (toString model.id) ]
-                    (List.map view (TileContainer.getChildTiles model.tiles))
+                    (List.map view (Tile.getChildTiles model.tiles))
                 )
             )

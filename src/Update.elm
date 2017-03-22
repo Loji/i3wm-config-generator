@@ -2,36 +2,35 @@ module Update exposing (..)
 
 import Msg exposing (Msg)
 import Model exposing (Model)
-import TileContainer.Update as TileContainer
-import TileContainer.Model as TileContainerModel
+import Tile.Update as Tile
+import Tile.Model as TileModel
 
 
 update : Msg -> Model -> Model
 update mainMsg model =
     case mainMsg of
-        Msg.ModifyTileContainer msg idTileContainer ->
-            -- let
-            --     msgForTileContainer index tile =
-            --         if (index == idTileContainer) then
-            --             TileContainer.update mainMsg tile
-            --         else
-            --             tile
-            -- in
-            --     { model
-            --         | tiles = List.indexedMap msgForTileContainer (TileContainerModel.getChildTiles model.tiles)
-            --     }
-            model
+        Msg.ModifyTile msg idTile ->
+            let
+                msgForTile index tile =
+                    if (index == idTile) then
+                        Tile.update mainMsg tile
+                    else
+                        tile
+            in
+                { model
+                    | tiles = TileModel.ChildTiles (List.indexedMap msgForTile (TileModel.getChildTiles model.tiles))
+                }
 
-        Msg.AddTileContainer idParent ->
+        Msg.AddTile idParent ->
             { model
                 | tiles =
-                    TileContainerModel.modifyById
+                    TileModel.modifyById
                         (\m ->
                             { m
                                 | tiles =
-                                    TileContainerModel.appendTile m.tiles
-                                        { layout = TileContainerModel.Horizontal
-                                        , tiles = TileContainerModel.ChildTiles []
+                                    TileModel.appendTile m.tiles
+                                        { layout = TileModel.Horizontal
+                                        , tiles = TileModel.ChildTiles []
                                         , id = model.lastTileId
                                         }
                             }

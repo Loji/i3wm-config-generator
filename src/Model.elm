@@ -1,16 +1,16 @@
 module Model exposing (..)
 
-import TileContainer.Model as TileContainer
+import Tile.Model as Tile
 
 
 type alias Model =
-    { tiles : TileContainer.ChildTiles
+    { tiles : Tile.ChildTiles
     , lastTileId : Int
     }
 
 
 initialModel : Model
 initialModel =
-    { tiles = TileContainer.ChildTiles [ TileContainer.model ]
+    { tiles = Tile.ChildTiles [ Tile.model ]
     , lastTileId = 0
     }
