@@ -10,18 +10,15 @@ update : Msg -> Model -> Model
 update mainMsg model =
     case mainMsg of
         Msg.ModifyTile msg idTile ->
-            let
-                msgForTile index tile =
-                    if (index == idTile) then
-                        Tile.update mainMsg tile
-                    else
-                        tile
-            in
-                { model
-                    | tiles = TileModel.ChildTiles (List.indexedMap msgForTile (TileModel.getChildTiles model.tiles))
-                }
+            { model
+                | tiles =
+                    TileModel.modifyById
+                        (\m -> Tile.update mainMsg m)
+                        idTile
+                        model.tiles
+            }
 
-        Msg.AddTile idParent ->
+        Msg.AddTile idTile ->
             { model
                 | tiles =
                     TileModel.modifyById
@@ -35,7 +32,7 @@ update mainMsg model =
                                         }
                             }
                         )
-                        idParent
+                        idTile
                         model.tiles
                 , lastTileId = model.lastTileId + 1
             }
