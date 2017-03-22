@@ -1,16 +1,16 @@
 
 .tile {
+    border: 1px solid #faa;
+}
 
+.tileTitle {
+    padding: 0.2em; 
+    border-bottom: 1px solid #faa;
 }
 
 .tileContainter {
-    margin: 2px;
-    padding: 2px;
-    padding-top: 1.2em;
-    
     display: flex;
     align-items: stretch;
-    border: 1px solid #faa;
 }
 
 .tileContainter--horizontal {
@@ -55,15 +55,20 @@
     }
 }
 
-.tile,
-.tileContainter {
-    overflow: hidden;
-    position: relative; 
-    flex-grow: 1;
+.editMode { 
+    .tile,
+    .tileContainter {
+        overflow: hidden;
+        position: relative; 
+        flex-grow: 1;
+        transition: all 0.2s ease; 
 
-    &:hover {
-        > .tileActionButtons {
-            transform: translateY(0);
+        &:hover {
+            padding-top: 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            > .tileActionButtons {
+                transform: translateY(0);
+            }
         }
     }
 }

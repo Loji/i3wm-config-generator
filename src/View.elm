@@ -15,5 +15,5 @@ view model =
         tiles =
             model.tiles
     in
-        div [ class "mainTile" ]
+        div [ class "mainTile editMode" ]
             (List.map Tile.view (getChildTiles tiles))

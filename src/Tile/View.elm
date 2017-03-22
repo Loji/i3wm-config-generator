@@ -22,10 +22,22 @@ view model =
                 "fa-arrows-v"
             else
                 "fa-arrows-h"
+
+        tileType =
+            if List.length (Tile.getChildTiles model.tiles) == 0 then
+                "tile"
+            else
+                "tileContainter"
+
+        tileContent =
+            if List.length (Tile.getChildTiles model.tiles) == 0 then
+                [ div [ class "tileTitle" ] [ text "Title" ] ]
+            else
+                (List.map view (Tile.getChildTiles model.tiles))
     in
         div
             [ class
-                ("tileContainter " ++ tileLayout)
+                (tileType ++ " " ++ tileLayout)
             ]
             (List.append
                 [ div [ class "tileActionButtons" ]
@@ -41,7 +53,5 @@ view model =
                         []
                     ]
                 ]
-                (List.append [ text (toString model.id) ]
-                    (List.map view (Tile.getChildTiles model.tiles))
-                )
+                tileContent
             )
