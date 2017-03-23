@@ -4,6 +4,7 @@ import Msg exposing (Msg)
 import Model exposing (Model)
 import Tile.Update as Tile
 import Tile.Model as TileModel
+import Controls.Update as Controls
 
 
 update : Msg -> Model -> Model
@@ -35,4 +36,9 @@ update mainMsg model =
                         idTile
                         model.tiles
                 , lastTileId = model.lastTileId + 1
+            }
+
+        Msg.ModifyControls msg ->
+            { model
+                | controls = Controls.update msg model.controls
             }

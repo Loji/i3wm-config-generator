@@ -5,7 +5,7 @@
 
 .tileTitle {
     padding: 0.2em; 
-    border-bottom: 1px solid #faa;
+    border-top: 1px solid #faa;
 }
 
 .tileContainter {
@@ -34,10 +34,11 @@
     position: absolute; 
     right: 0;
     top: 0;
+    text-align: right;
+    width: 100%;
     transform: translateY(-100%);
     transition: all 0.3s ease;
     background: rgba(0, 0, 0, 0.2);
-    
     .fa { 
         margin: 0.3em; 
         line-height: 1.4rem; 
@@ -55,12 +56,16 @@
     }
 }
 
+.tile,
+.tileContainter {
+    flex-grow: 1;
+}
+
 .editMode { 
     .tile,
     .tileContainter {
         overflow: hidden;
         position: relative; 
-        flex-grow: 1;
         transition: all 0.2s ease; 
 
         &:hover {
@@ -69,6 +74,25 @@
             > .tileActionButtons {
                 transform: translateY(0);
             }
+        }
+    }
+}
+
+.controlBar {
+    padding: 0.3rem; 
+    background: #444;
+    color: #fff;
+    .fa {
+        border-radius: 100%;
+        width: 1.2rem; 
+        height: 1.2rem; 
+        line-height: 1.2rem; 
+        text-align: center; 
+        transition: all 0.3s ease; 
+        cursor: pointer;
+        &.active {
+            color: #444;
+            background: #fff;
         }
     }
 }
