@@ -1,15 +1,36 @@
+$defaultBorderColor: #444;
+$defaultBackgroundColor: #444;
+$defaultColor: #ddd;
+
+$activeBorderColor: #337EFF;
+$activeBackgroundColor: #337EFF;
+$activeColor: #ddd;
+
+@mixin tileStyles($textColor, $borderColor, $backgroundColor) {
+    border-bottom: 1px solid $borderColor;
+    background: $backgroundColor;
+    color: $textColor;
+}
 
 .tile {
-    border: 1px solid #faa;
+    border: 1px solid $defaultBorderColor;
+    > .tileTitle {
+        @include tileStyles($defaultColor, $defaultBorderColor, $defaultBackgroundColor);
+    }
+    &:hover {
+        border: 1px solid $activeBorderColor;
+        > .tileTitle {
+            @include tileStyles($activeColor, $activeBorderColor, $activeBackgroundColor);
+        }
+    }
+}
+
+.tileTitle { 
+    padding: 0.2em 0; 
 }
 
 .tile--hasChildren {
     display: flex;
-}
-
-.tileTitle {
-    padding: 0.2em; 
-    border-bottom: 1px solid #faa;
 }
 
 .tileChildren {
@@ -19,11 +40,10 @@
 .tileContainer {
     position: absolute; 
     display: flex;
-    left: 0;
-    right: 0;
-    top: 0; 
-    bottom: 0;
-    // align-items: stretch;
+    left: -1px;
+    right: -1px;
+    top: -1px; 
+    bottom: -1px;
 }
 
 .tileContainter--horizontal {
