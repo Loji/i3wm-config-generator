@@ -15,5 +15,5 @@ initialModel : Model
 initialModel =
     { tiles = Tile.ChildTiles [ Tile.model ]
     , controls = Controls.model
-    , lastTileId = 0
+    , lastTileId = 1
     }
