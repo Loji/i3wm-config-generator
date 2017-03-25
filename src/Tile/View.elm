@@ -14,9 +14,9 @@ view model =
         let
             tileLayout =
                 if model.layout == Tile.Horizontal then
-                    "tileContainter--horizontal"
+                    "tile-containter--horizontal"
                 else
-                    "tileContainter--vertical"
+                    "tile-containter--vertical"
 
             toggleLayoutIcon =
                 if model.layout == Tile.Horizontal then
@@ -29,18 +29,24 @@ view model =
 
             hasChildrenClass =
                 if isTile then
-                    ""
+                    "tile--single"
                 else
                     "tile--hasChildren"
 
             tileContent =
                 if isTile then
-                    [ div [ class "tileTitle" ] [ text "Title" ] ]
+                    [ div [ class "tile-contentWrapper" ]
+                        [ div [ class "tile-content" ]
+                            [ div [ class "tile-title" ] [ text "Title" ]
+                            , img [ src ("https://unsplash.it/1920/1080/?image=" ++ (toString (model.id % 10))) ] []
+                            ]
+                        ]
+                    ]
                 else
                     [ div
-                        [ class "tileChildren" ]
+                        [ class "tile-contentWrapper" ]
                         [ div
-                            [ class ("tileContainer " ++ tileLayout) ]
+                            [ class ("tile-container " ++ tileLayout) ]
                             (List.map view (Tile.getChildTiles model.tiles))
                         ]
                     ]
@@ -50,7 +56,7 @@ view model =
                     ("tile " ++ hasChildrenClass)
                 ]
                 (List.append
-                    [ div [ class "tileActionButtons" ]
+                    [ div [ class "tile-actionButtons" ]
                         [ if isTile then
                             text ""
                           else
