@@ -1,16 +1,26 @@
 
 .tile {
     border: 1px solid #faa;
+    display: flex;
 }
 
 .tileTitle {
     padding: 0.2em; 
-    border-top: 1px solid #faa;
+    border-bottom: 1px solid #faa;
 }
 
-.tileContainter {
+.tileChildren {
+    position: relative; 
+}
+
+.tileContainer {
+    position: absolute; 
     display: flex;
-    align-items: stretch;
+    left: 0;
+    right: 0;
+    top: 0; 
+    bottom: 0;
+    // align-items: stretch;
 }
 
 .tileContainter--horizontal {
@@ -57,13 +67,14 @@
 }
 
 .tile,
+.tileChildren,
 .tileContainter {
     flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .editMode { 
-    .tile,
-    .tileContainter {
+    .tile {
         overflow: hidden;
         position: relative; 
         transition: all 0.2s ease; 
