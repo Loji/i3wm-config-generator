@@ -1,6 +1,9 @@
 
 .tile {
     border: 1px solid #faa;
+}
+
+.tile--hasChildren {
     display: flex;
 }
 

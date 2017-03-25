@@ -27,6 +27,12 @@ view model =
             isTile =
                 List.length (Tile.getChildTiles model.tiles) == 0
 
+            hasChildrenClass =
+                if isTile then
+                    ""
+                else
+                    "tile--hasChildren"
+
             tileContent =
                 if isTile then
                     [ div [ class "tileTitle" ] [ text "Title" ] ]
@@ -41,7 +47,7 @@ view model =
         in
             div
                 [ class
-                    ("tile " ++ tileLayout)
+                    ("tile " ++ hasChildrenClass)
                 ]
                 (List.append
                     [ div [ class "tileActionButtons" ]
