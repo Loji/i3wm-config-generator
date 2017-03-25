@@ -428,7 +428,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, ".tile {\n  border: 1px solid #444;\n  display: flex; }\n  .tile > .tile-contentWrapper > .tile-content {\n    overflow: hidden;\n    max-width: 100%;\n    max-height: 100%; }\n    .tile > .tile-contentWrapper > .tile-content .tile-title {\n      border-bottom: 1px solid #444;\n      background: #444;\n      color: #ddd; }\n  .tile:hover {\n    border: 1px solid #337EFF; }\n    .tile:hover > .tile-contentWrapper > .tile-content .tile-title {\n      border-bottom: 1px solid #337EFF;\n      background: #337EFF;\n      color: #ddd; }\n\nimg {\n  opacity: 0.3; }\n\n.tile--hasChildren {\n  display: flex; }\n\n.tile--single {\n  overflow: hidden; }\n\n.tile-contentWrapper {\n  position: relative; }\n\n.tile-content {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0; }\n\n.til-title {\n  padding: 0.2em 0; }\n\n.tile-container {\n  position: absolute;\n  left: -1px;\n  right: -1px;\n  top: -1px;\n  bottom: -1px; }\n\n.tile-container {\n  display: flex; }\n\n.tile-containter--horizontal {\n  flex-direction: row; }\n\n.tile-containter--vertical {\n  flex-direction: column; }\n\n.mainTile {\n  width: 100vw;\n  height: 100vh;\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  display: flex; }\n\n.tile-actionButtons {\n  position: absolute;\n  right: 0;\n  top: 0;\n  text-align: right;\n  width: 100%;\n  transform: translateY(-100%);\n  transition: all 0.3s ease;\n  background: rgba(0, 0, 0, 0.2); }\n  .tile-actionButtons .fa {\n    margin: 0.3em;\n    line-height: 1.4rem;\n    width: 1.4rem;\n    height: 1.4rem;\n    text-align: center;\n    background: rgba(0, 0, 0, 0.4);\n    transition: all 0.3s ease;\n    color: #fff; }\n    .tile-actionButtons .fa:hover {\n      background: rgba(0, 0, 0, 0.6); }\n\n.tile,\n.tile-children,\n.tile-containter,\n.tile-contentWrapper {\n  flex-grow: 1;\n  flex-shrink: 1; }\n\n.editMode .tile {\n  overflow: hidden;\n  position: relative;\n  transition: all 0.2s ease; }\n  .editMode .tile:hover {\n    padding-top: 2rem;\n    background: rgba(0, 0, 0, 0.2); }\n    .editMode .tile:hover > .tile-actionButtons {\n      transform: translateY(0); }\n\n.controlBar {\n  padding: 0.3rem;\n  background: #444;\n  color: #fff; }\n  .controlBar .fa {\n    border-radius: 100%;\n    width: 1.2rem;\n    height: 1.2rem;\n    line-height: 1.2rem;\n    text-align: center;\n    transition: all 0.3s ease;\n    cursor: pointer; }\n    .controlBar .fa.active {\n      color: #444;\n      background: #fff; }\n", ""]);
+exports.push([module.i, ".tile {\n  border: 1px solid #444;\n  display: flex; }\n  .tile > .tile-contentWrapper > .tile-content {\n    overflow: hidden;\n    max-width: 100%;\n    max-height: 100%; }\n    .tile > .tile-contentWrapper > .tile-content .tile-title {\n      border-bottom: 1px solid #444;\n      background: #444;\n      color: #ddd; }\n  .tile:hover {\n    border: 1px solid #337EFF; }\n    .tile:hover > .tile-contentWrapper > .tile-content .tile-title {\n      border-bottom: 1px solid #337EFF;\n      background: #337EFF;\n      color: #ddd; }\n\nimg {\n  opacity: 0.3; }\n\n.tile--hasChildren {\n  display: flex; }\n\n.tile--single {\n  overflow: hidden; }\n\n.tile-contentWrapper {\n  position: relative; }\n\n.tile-content {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0; }\n\n.til-title {\n  padding: 0.2em 0; }\n\n.tile-container {\n  position: absolute;\n  left: -1px;\n  right: -1px;\n  top: -1px;\n  bottom: -1px; }\n\n.tile-container {\n  display: flex; }\n\n.tile-containter--horizontal {\n  flex-direction: row; }\n\n.tile-containter--vertical {\n  flex-direction: column; }\n\n.mainView {\n  width: 100vw;\n  height: 100vh;\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  display: flex; }\n\n.tile,\n.tile-children,\n.tile-containter,\n.tile-contentWrapper {\n  flex-grow: 1;\n  flex-shrink: 1; }\n\n.tile-actionButtons {\n  display: none; }\n\n.editMode .tile {\n  overflow: hidden;\n  position: relative;\n  transition: all 0.2s ease; }\n  .editMode .tile:hover {\n    padding-top: 2rem;\n    background: rgba(0, 0, 0, 0.2); }\n    .editMode .tile:hover > .tile-actionButtons {\n      transform: translateY(0); }\n\n.editMode .tile-actionButtons {\n  display: block;\n  position: absolute;\n  right: 0;\n  top: 0;\n  text-align: right;\n  width: 100%;\n  transform: translateY(-100%);\n  transition: all 0.3s ease;\n  background: rgba(0, 0, 0, 0.2); }\n  .editMode .tile-actionButtons .fa {\n    margin: 0.3em;\n    line-height: 1.4rem;\n    width: 1.4rem;\n    height: 1.4rem;\n    text-align: center;\n    background: rgba(0, 0, 0, 0.4);\n    transition: all 0.3s ease;\n    color: #fff; }\n    .editMode .tile-actionButtons .fa:hover {\n      background: rgba(0, 0, 0, 0.6); }\n\n.controlBar {\n  padding: 0.3rem;\n  background: #555;\n  color: #fff; }\n  .controlBar .fa {\n    border-radius: 100%;\n    width: 1.2rem;\n    height: 1.2rem;\n    line-height: 1.2rem;\n    text-align: center;\n    transition: all 0.3s ease;\n    cursor: pointer; }\n    .controlBar .fa.active {\n      color: #555;\n      background: #fff; }\n\n.flex {\n  display: flex; }\n\n.flex--column {\n  flex-direction: column; }\n\n.flex--row {\n  flex-direction: row; }\n\n.workspace {\n  display: flex;\n  flex-grow: 1; }\n\n.workspaces-bar {\n  padding: 0.2em;\n  background: #444; }\n\n.workspace-icon {\n  border: 1px solid #aaa;\n  color: #aaa;\n  width: 1.2em;\n  height: 1.2em;\n  line-height: 1.2em;\n  font-size: 0.7em;\n  text-align: center; }\n", ""]);
 
 // exports
 
@@ -9075,27 +9075,72 @@ var _Loji$i3wm_config_generator$Tile_View$view = function (model) {
 
 var _Loji$i3wm_config_generator$View$view = function (model) {
 	var controls = model.controls;
-	var mainTileClass = controls.editing ? 'editMode' : '';
+	var mainClass = controls.editing ? 'editMode' : '';
 	var tiles = model.tiles;
 	return A2(
 		_elm_lang$html$Html$div,
 		{
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class(
-				A2(_elm_lang$core$Basics_ops['++'], 'mainTile ', mainTileClass)),
+			_0: _elm_lang$html$Html_Attributes$class('flex'),
 			_1: {ctor: '[]'}
 		},
-		A2(
-			_elm_lang$core$List$append,
-			A2(
-				_elm_lang$core$List$map,
-				_Loji$i3wm_config_generator$Tile_View$view,
-				_Loji$i3wm_config_generator$Tile_Model$getChildTiles(tiles)),
-			{
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class(
+						A2(_elm_lang$core$Basics_ops['++'], 'mainView flex--column ', mainClass)),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('workspaces-bar'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('workspace-icon'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('1'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('workspace'),
+								_1: {ctor: '[]'}
+							},
+							A2(
+								_elm_lang$core$List$map,
+								_Loji$i3wm_config_generator$Tile_View$view,
+								_Loji$i3wm_config_generator$Tile_Model$getChildTiles(tiles))),
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {
 				ctor: '::',
 				_0: _Loji$i3wm_config_generator$Controls_View$view(controls),
 				_1: {ctor: '[]'}
-			}));
+			}
+		});
 };
 
 var _Loji$i3wm_config_generator$Main$main = _elm_lang$html$Html$beginnerProgram(
