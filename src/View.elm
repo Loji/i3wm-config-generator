@@ -19,14 +19,21 @@ view model =
         controls =
             model.controls
 
-        mainTileClass =
+        mainClass =
             if controls.editing then
                 "editMode"
             else
                 ""
     in
-        div [ class ("mainTile " ++ mainTileClass) ]
-            (List.append
-                (List.map Tile.view (getChildTiles tiles))
-                [ Controls.view controls ]
-            )
+        div [ class "flex" ]
+            [ div [ class ("mainView flex--column " ++ mainClass) ]
+                [ div
+                    [ class "workspaces-bar"
+                    ]
+                    [ div [ class "workspace-icon" ] [ text "1" ]
+                    ]
+                , div [ class "workspace" ]
+                    (List.map Tile.view (getChildTiles tiles))
+                ]
+            , Controls.view controls
+            ]

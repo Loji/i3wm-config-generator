@@ -79,7 +79,7 @@ img {
     flex-direction: column;
 }
 
-.mainTile {
+.mainView {
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -88,31 +88,7 @@ img {
     display: flex; 
 }
 
-.tile-actionButtons {
-    position: absolute; 
-    right: 0;
-    top: 0;
-    text-align: right;
-    width: 100%;
-    transform: translateY(-100%);
-    transition: all 0.3s ease;
-    background: rgba(0, 0, 0, 0.2);
-    .fa { 
-        margin: 0.3em; 
-        line-height: 1.4rem; 
-        width: 1.4rem; 
-        height: 1.4rem; 
-        text-align: center;
-        background: rgba(0, 0, 0, 0.4);
-        transition: all 0.3s ease; 
-        color: #fff;
 
-        &:hover { 
-            background: rgba(0, 0, 0, 0.6);
-        }
-
-    }
-}
 
 .tile,
 .tile-children,
@@ -120,6 +96,10 @@ img {
 .tile-contentWrapper {
     flex-grow: 1;
     flex-shrink: 1;
+}
+
+.tile-actionButtons {
+    display: none;
 }
 
 .editMode { 
@@ -136,11 +116,36 @@ img {
             }
         }
     }
+    .tile-actionButtons {
+        display: block;
+        position: absolute; 
+        right: 0;
+        top: 0;
+        text-align: right;
+        width: 100%;
+        transform: translateY(-100%);
+        transition: all 0.3s ease;
+        background: rgba(0, 0, 0, 0.2);
+        .fa { 
+            margin: 0.3em; 
+            line-height: 1.4rem; 
+            width: 1.4rem; 
+            height: 1.4rem; 
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease; 
+            color: #fff;
+
+            &:hover { 
+                background: rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
 }
 
 .controlBar {
     padding: 0.3rem; 
-    background: #444;
+    background: #555;
     color: #fff;
     .fa {
         border-radius: 100%;
@@ -151,8 +156,40 @@ img {
         transition: all 0.3s ease; 
         cursor: pointer;
         &.active {
-            color: #444;
+            color: #555;
             background: #fff;
         }
     }
+}
+
+.flex {
+    display: flex;
+}
+
+.flex--column { 
+    flex-direction: column;
+}
+
+.flex--row { 
+    flex-direction: row;
+}
+
+.workspace {
+    display: flex; 
+    flex-grow: 1;
+}
+
+.workspaces-bar {
+    padding: 0.2em;
+    background: $defaultBackgroundColor;
+}
+
+.workspace-icon {
+    border: 1px solid #aaa;
+    color: #aaa;
+    width: 1.2em; 
+    height: 1.2em; 
+    line-height: 1.2em;
+    font-size: 0.7em;
+    text-align: center; 
 }
