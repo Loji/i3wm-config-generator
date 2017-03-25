@@ -27,6 +27,11 @@ updateTile msg model =
                         Tile.Horizontal
             }
 
+        Tile.HideTile ->
+            { model
+                | visible = False
+            }
+
         Tile.AddChildren child ->
             { model
                 | tiles = Tile.appendTile model.tiles child

@@ -9,6 +9,7 @@ type Layout
 type alias Model =
     { layout : Layout
     , tiles : ChildTiles
+    , visible : Bool
     , id : Int
     }
 
@@ -63,5 +64,6 @@ model : Model
 model =
     { layout = Horizontal
     , tiles = ChildTiles []
+    , visible = True
     , id = 0
     }

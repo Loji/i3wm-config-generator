@@ -5,4 +5,5 @@ import Tile.Model exposing (Model)
 
 type Msg
     = ChangeLayout
+    | HideTile
     | AddChildren Model

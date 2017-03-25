@@ -26,11 +26,7 @@ update mainMsg model =
                         (\m ->
                             { m
                                 | tiles =
-                                    TileModel.appendTile m.tiles
-                                        { layout = TileModel.Horizontal
-                                        , tiles = TileModel.ChildTiles []
-                                        , id = model.lastTileId
-                                        }
+                                    TileModel.appendTile m.tiles (TileModel.newTile model.lastTileId)
                             }
                         )
                         idTile
