@@ -7,5 +7,5 @@ type alias Model =
 
 model : Model
 model =
-    { editing = False
+    { editing = True
     }
