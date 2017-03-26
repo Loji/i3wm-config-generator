@@ -3607,7 +3607,7 @@ var _elm_lang$core$Platform$Task = {ctor: 'Task'};
 var _elm_lang$core$Platform$ProcessId = {ctor: 'ProcessId'};
 var _elm_lang$core$Platform$Router = {ctor: 'Router'};
 
-var _Loji$i3wm_config_generator$Controls_Model$model = {editing: false};
+var _Loji$i3wm_config_generator$Controls_Model$model = {editing: true};
 var _Loji$i3wm_config_generator$Controls_Model$Model = function (a) {
 	return {editing: a};
 };
